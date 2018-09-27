@@ -7,8 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-[%
-  var i=0;
+  [%
   for (c in Application.allInstances.entidades.flatten()){
   %]
 //[%=c.name%]
@@ -17,7 +16,6 @@ import {[%=c.name%]EditPage} from '../pages/[%=c.name%]/edit/[%=c.name%].edit';
 import {[%=c.name%]AddPage} from '../pages/[%=c.name%]/add/[%=c.name%].add';
 import {[%=c.name%]Service} from '../pages/[%=c.name%]/services/[%=c.name%]-service';
   [%
-  	i++;
   }
 %]
 
@@ -25,18 +23,14 @@ import {[%=c.name%]Service} from '../pages/[%=c.name%]/services/[%=c.name%]-serv
   declarations: [
     MyApp,
     HomePage,
-    EstudianteListPage,
-    EstudianteEditPage,
-    EstudianteAddPage,
-    ProfesorListPage,
-    ProfesorEditPage,
-    ProfesorAddPage,
-    DireccionListPage,
-    DireccionEditPage,
-    DireccionAddPage,
-    CursoListPage,
-    CursoEditPage,
-    CursoAddPage
+    [%
+  	for (c in Application.allInstances.entidades.flatten()){%]
+  	  [%=c.name%]ListPage,
+ 	  [%=c.name%]EditPage,
+ 	  [%=c.name%]AddPage, 	  
+  	[%  
+  	}
+    %]
   ],
   imports: [
     BrowserModule,
@@ -46,27 +40,26 @@ import {[%=c.name%]Service} from '../pages/[%=c.name%]/services/[%=c.name%]-serv
   entryComponents: [
     MyApp,
     HomePage,
-    EstudianteListPage,
-    EstudianteEditPage,
-    EstudianteAddPage,
-    ProfesorListPage,
-    ProfesorEditPage,
-    ProfesorAddPage,
-    DireccionListPage,
-    DireccionEditPage,
-    DireccionAddPage,
-    CursoListPage,
-    CursoEditPage,
-    CursoAddPage
+    [%
+  	for (c in Application.allInstances.entidades.flatten()){%]
+  	  [%=c.name%]ListPage,
+ 	  [%=c.name%]EditPage,
+ 	  [%=c.name%]AddPage, 	  
+  	[%  
+  	}
+    %]
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EstudianteService,
-    ProfesorService,
-    DireccionService,
-    CursoService
+    [%
+  	for (c in Application.allInstances.entidades.flatten()){%]
+  	  [%=c.name%]Service, 	  
+  	[%  
+  	}
+    %]
   ]
 })
 export class AppModule {}
