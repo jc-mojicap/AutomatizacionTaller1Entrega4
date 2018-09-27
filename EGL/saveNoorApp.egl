@@ -1,11 +1,17 @@
 [% 
 	var app:Template:= TemplateFactory.load('appModule.egl');
 	app.generate('./src/app/app.module.ts');
-	var m:Template:= TemplateFactory.load('modelGen.egl');
 	var fileName="";
-	for(cl in Application.all.entidades.flatten()){
-	  fileName="./src/model/"+ cl.name+"/"+cl.name+".ts" ;
-	  m.generate(fileName);
+	for(cl in Entidad.all.flatten()){
+	  var m:Template:= TemplateFactory.load('modelGen.egl');
+	  m.populate('mod', cl);
+	  m.generate("./src/model/"+ cl.name.toLowerCase+"/"+cl.name.toLowerCase+".ts" );
+	}
+	var ap:Template:= TemplateFactory.load('appPagesAdd.egl');
+	fileName="";
+	for(cl in Entidad.all.flatten()){
+	  fileName="./src/pages/add/"+ cl.name+"/"+cl.name+".add.html" ;
+	  ap.generate(fileName);
 	}
 	//var e:Template:= TemplateFactory.load('Entidad.egl');
 	//e.generate('estudiante.add.html');

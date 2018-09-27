@@ -5,6 +5,7 @@ package entrega3;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -332,6 +333,16 @@ public interface Entrega3Package extends EPackage {
 	int APPLICATION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link entrega3.Data <em>Data</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see entrega3.Data
+	 * @see entrega3.impl.Entrega3PackageImpl#getData()
+	 * @generated
+	 */
+	int DATA = 4;
+
+	/**
 	 * The meta object id for the '<em>Datos</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,7 +350,7 @@ public interface Entrega3Package extends EPackage {
 	 * @see entrega3.impl.Entrega3PackageImpl#getDatos()
 	 * @generated
 	 */
-	int DATOS = 4;
+	int DATOS = 5;
 
 
 	/**
@@ -581,6 +592,16 @@ public interface Entrega3Package extends EPackage {
 	EReference getApplication_Detalles();
 
 	/**
+	 * Returns the meta object for enum '{@link entrega3.Data <em>Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Data</em>'.
+	 * @see entrega3.Data
+	 * @generated
+	 */
+	EEnum getData();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Datos</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,6 +818,16 @@ public interface Entrega3Package extends EPackage {
 		 * @generated
 		 */
 		EReference APPLICATION__DETALLES = eINSTANCE.getApplication_Detalles();
+
+		/**
+		 * The meta object literal for the '{@link entrega3.Data <em>Data</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see entrega3.Data
+		 * @see entrega3.impl.Entrega3PackageImpl#getData()
+		 * @generated
+		 */
+		EEnum DATA = eINSTANCE.getData();
 
 		/**
 		 * The meta object literal for the '<em>Datos</em>' data type.

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entrega3:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:entrega3="http://www.uniandes.edu.co/entrega3" name="NoorApp">
+<entrega3:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:entrega3="http://www.uniandes.edu.co/entrega3" name="NoorApp" floatingButtonColor="">
   <entidades description="Lista de estudiantes de la universidad" name="Estudiante">
-    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
-    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
-    <atributos isEditable="true" isMandatory="true" name="Semestre"/>
-    <atributos isEditable="true" name="Activo"/>
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre" tipoDato="String"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo" tipoDato="Number"/>
+    <atributos isEditable="true" isMandatory="true" name="Semestre" tipoDato="Number"/>
+    <atributos isEditable="true" name="Activo" tipoDato="Boolean"/>
   </entidades>
   <entidades description="Lista de profesores de la universidad" name="Profesor">
-    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
-    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
-    <atributos isEditable="true" isMandatory="true" name="Facultad"/>
-    <atributos isEditable="true" name="Inicio"/>
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre" tipoDato="String"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo" tipoDato="Number"/>
+    <atributos isEditable="true" isMandatory="true" name="Facultad" tipoDato="String"/>
+    <atributos isEditable="true" name="Inicio" tipoDato="Date"/>
   </entidades>
   <entidades description="Lista de cursos de la universidad" name="Curso">
-    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
-    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre" tipoDato="String"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo" tipoDato="Number"/>
   </entidades>
-  <entidades description="Ubicacion" name="Direccion">
-    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Direccion"/>
-    <atributos isMandatory="true" isVisibleInList="true" name="Ciudad"/>
-    <atributos isEditable="true" isMandatory="true" name="Pais"/>
-    <atributos isEditable="true" name="Zipcode"/>
+  <entidades description="Ubicación" name="Direccion">
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Direccion" tipoDato="String"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Ciudad" tipoDato="String"/>
+    <atributos isEditable="true" isMandatory="true" name="Pais" tipoDato="String"/>
+    <atributos isEditable="true" name="Zipcode" tipoDato="Number"/>
   </entidades>
   <detalles esclavo="//@entidades.3" isStrong="true" maestro="//@entidades.0"/>
   <detalles esclavo="//@entidades.3" isStrong="true" maestro="//@entidades.1"/>

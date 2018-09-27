@@ -74,6 +74,8 @@ public class Entrega3FactoryImpl extends EFactoryImpl implements Entrega3Factory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case Entrega3Package.DATA:
+				return createDataFromString(eDataType, initialValue);
 			case Entrega3Package.DATOS:
 				return createDatosFromString(eDataType, initialValue);
 			default:
@@ -89,6 +91,8 @@ public class Entrega3FactoryImpl extends EFactoryImpl implements Entrega3Factory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case Entrega3Package.DATA:
+				return convertDataToString(eDataType, instanceValue);
 			case Entrega3Package.DATOS:
 				return convertDatosToString(eDataType, instanceValue);
 			default:
@@ -134,6 +138,26 @@ public class Entrega3FactoryImpl extends EFactoryImpl implements Entrega3Factory
 	public Application createApplication() {
 		ApplicationImpl application = new ApplicationImpl();
 		return application;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Data createDataFromString(EDataType eDataType, String initialValue) {
+		Data result = Data.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDataToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

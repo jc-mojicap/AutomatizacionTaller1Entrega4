@@ -4,6 +4,7 @@ package entrega3.impl;
 
 import entrega3.Application;
 import entrega3.Atributo;
+import entrega3.Data;
 import entrega3.Entidad;
 import entrega3.Entrega3Factory;
 import entrega3.Entrega3Package;
@@ -12,6 +13,7 @@ import entrega3.MasterDetail;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -51,6 +53,13 @@ public class Entrega3PackageImpl extends EPackageImpl implements Entrega3Package
 	 * @generated
 	 */
 	private EClass applicationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,6 +332,15 @@ public class Entrega3PackageImpl extends EPackageImpl implements Entrega3Package
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getData() {
+		return dataEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getDatos() {
 		return datosEDataType;
 	}
@@ -380,6 +398,9 @@ public class Entrega3PackageImpl extends EPackageImpl implements Entrega3Package
 		createEAttribute(applicationEClass, APPLICATION__TEXT_COLOR);
 		createEAttribute(applicationEClass, APPLICATION__FLOATING_BUTTON_COLOR);
 		createEReference(applicationEClass, APPLICATION__DETALLES);
+
+		// Create enums
+		dataEEnum = createEEnum(DATA);
 
 		// Create data types
 		datosEDataType = createEDataType(DATOS);
@@ -440,6 +461,13 @@ public class Entrega3PackageImpl extends EPackageImpl implements Entrega3Package
 		initEAttribute(getApplication_TextColor(), ecorePackage.getEString(), "textColor", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_FloatingButtonColor(), ecorePackage.getEString(), "floatingButtonColor", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Detalles(), this.getMasterDetail(), null, "detalles", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(dataEEnum, Data.class, "Data");
+		addEEnumLiteral(dataEEnum, Data.STRING);
+		addEEnumLiteral(dataEEnum, Data.NUMBER);
+		addEEnumLiteral(dataEEnum, Data.BOOLEAN);
+		addEEnumLiteral(dataEEnum, Data.DATE);
 
 		// Initialize data types
 		initEDataType(datosEDataType, Object.class, "Datos", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

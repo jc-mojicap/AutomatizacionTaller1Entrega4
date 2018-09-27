@@ -21,7 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVisibleInList" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoDato" eType="#//Datos"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoDato" eType="#//Data"
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
@@ -33,6 +33,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="floatingButtonColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="detalles" upperBound="-1"
         eType="#//MasterDetail" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Data">
+    <eLiterals name="String" literal="String"/>
+    <eLiterals name="Number" literal="Number"/>
+    <eLiterals name="Boolean" value="2" literal="Boolean"/>
+    <eLiterals name="Date" value="3" literal="Date"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Datos" instanceTypeName="newDataType2"/>
 </ecore:EPackage>
