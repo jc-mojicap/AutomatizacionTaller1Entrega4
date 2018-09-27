@@ -1,6 +1,12 @@
 [% 
 	var app:Template:= TemplateFactory.load('appModule.egl');
-	app.generate('app.module.ts');
+	app.generate('./src/app/app.module.ts');
+	var m:Template:= TemplateFactory.load('modelGen.egl');
+	var fileName="";
+	for(cl in Application.all.entidades.flatten()){
+	  fileName="./src/model/"+ cl.name+"/"+cl.name+".ts" ;
+	  m.generate(fileName);
+	}
 	//var e:Template:= TemplateFactory.load('Entidad.egl');
 	//e.generate('estudiante.add.html');
 	//var p:Template:= TemplateFactory.load('Atributo.egl');
