@@ -1,0 +1,72 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+
+[%
+  var i=0;
+  for (c in Application.allInstances.entidades.flatten()){
+  %]
+//[%=c.name%]
+import {[%=c.name%]ListPage} from '../pages/[%=c.name%]/list/[%=c.name%].list';
+import {[%=c.name%]EditPage} from '../pages/[%=c.name%]/edit/[%=c.name%].edit';
+import {[%=c.name%]AddPage} from '../pages/[%=c.name%]/add/[%=c.name%].add';
+import {[%=c.name%]Service} from '../pages/[%=c.name%]/services/[%=c.name%]-service';
+  [%
+  	i++;
+  }
+%]
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    EstudianteListPage,
+    EstudianteEditPage,
+    EstudianteAddPage,
+    ProfesorListPage,
+    ProfesorEditPage,
+    ProfesorAddPage,
+    DireccionListPage,
+    DireccionEditPage,
+    DireccionAddPage,
+    CursoListPage,
+    CursoEditPage,
+    CursoAddPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    EstudianteListPage,
+    EstudianteEditPage,
+    EstudianteAddPage,
+    ProfesorListPage,
+    ProfesorEditPage,
+    ProfesorAddPage,
+    DireccionListPage,
+    DireccionEditPage,
+    DireccionAddPage,
+    CursoListPage,
+    CursoEditPage,
+    CursoAddPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EstudianteService,
+    ProfesorService,
+    DireccionService,
+    CursoService
+  ]
+})
+export class AppModule {}

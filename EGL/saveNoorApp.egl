@@ -1,0 +1,10 @@
+[% 
+	var app:Template:= TemplateFactory.load('appModule.egl');
+	app.generate('app.module.ts');
+	//var e:Template:= TemplateFactory.load('Entidad.egl');
+	//e.generate('estudiante.add.html');
+	//var p:Template:= TemplateFactory.load('Atributo.egl');
+	//p.generate('profesor.add.html');
+	//var c:Template:= TemplateFactory.load('MasterDetail.egl');
+	//c.generate('cursos.add.html');
+%]

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entrega3:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:entrega3="http://www.uniandes.edu.co/entrega3" name="NoorApp">
+  <entidades description="Lista de estudiantes de la universidad" name="Estudiante">
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
+    <atributos isEditable="true" isMandatory="true" name="Semestre"/>
+    <atributos isEditable="true" name="Activo"/>
+  </entidades>
+  <entidades description="Lista de profesores de la universidad" name="Profesor">
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
+    <atributos isEditable="true" isMandatory="true" name="Facultad"/>
+    <atributos isEditable="true" name="Inicio"/>
+  </entidades>
+  <entidades description="Lista de cursos de la universidad" name="Curso">
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Codigo"/>
+  </entidades>
+  <entidades description="Ubicacion" name="Direccion">
+    <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Direccion"/>
+    <atributos isMandatory="true" isVisibleInList="true" name="Ciudad"/>
+    <atributos isEditable="true" isMandatory="true" name="Pais"/>
+    <atributos isEditable="true" name="Zipcode"/>
+  </entidades>
+  <detalles esclavo="//@entidades.3" isStrong="true" maestro="//@entidades.0"/>
+  <detalles esclavo="//@entidades.3" isStrong="true" maestro="//@entidades.1"/>
+  <detalles esclavo="//@entidades.2" maestro="//@entidades.0"/>
+</entrega3:Application>
