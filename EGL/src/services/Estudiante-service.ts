@@ -15,7 +15,7 @@ export class EstudianteService {
   }
 
   remove(estudiantes:EstudianteModel){
-    for(var i = 0; i < this.estudiantess.length; i++) {
+    for(var i = 0; i < this.estudiantes.length; i++) {
         if(this.estudiantes[i] == estudiantes){
             this.estudiantes.splice(i, 1);
         }

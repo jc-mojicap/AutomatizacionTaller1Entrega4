@@ -34,7 +34,7 @@ export interface [%=mod.name%]ModelDelegate {
     }
   }
   if(mast.size()>0){
-    text2=" Implements " + text1;
+    text2=" implements " + text1;
   }else{
     text2="";
   }

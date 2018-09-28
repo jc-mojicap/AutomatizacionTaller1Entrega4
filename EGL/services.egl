@@ -27,7 +27,7 @@ export class [%=c%]Service {
   }
 
   remove([%=entityLowerCase%]:[%=c%]Model){
-    for(var i = 0; i < this.[%=entityLowerCase%]s.length; i++) {
+    for(var i = 0; i < this.[%=entityLowerCase%].length; i++) {
         if(this.[%=entityLowerCase%][i] == [%=entityLowerCase%]){
             this.[%=entityLowerCase%].splice(i, 1);
         }

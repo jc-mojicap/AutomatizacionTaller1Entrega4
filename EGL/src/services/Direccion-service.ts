@@ -15,7 +15,7 @@ export class DireccionService {
   }
 
   remove(direcciones:DireccionModel){
-    for(var i = 0; i < this.direccioness.length; i++) {
+    for(var i = 0; i < this.direcciones.length; i++) {
         if(this.direcciones[i] == direcciones){
             this.direcciones.splice(i, 1);
         }

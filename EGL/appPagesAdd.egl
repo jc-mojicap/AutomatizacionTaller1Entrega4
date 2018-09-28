@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      [%=entity.name%]s
+      [%=entity.name%]
     </ion-title>
   </ion-navbar>
 </ion-header>

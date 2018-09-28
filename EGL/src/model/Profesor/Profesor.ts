@@ -13,7 +13,7 @@ export interface ProfesorModelDelegate {
     removeProfesor: (profesor:Profesor)=> void;
 }
 
-export class ProfesorModel  Implements DireccionModelDelegate{
+export class ProfesorModel  implements DireccionModelDelegate{
  
     public fields: AtributoItemModel[]
 	//Direccion

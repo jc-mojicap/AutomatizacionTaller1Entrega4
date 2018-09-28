@@ -15,7 +15,7 @@ export class CursosService {
   }
 
   remove(cursos:CursosModel){
-    for(var i = 0; i < this.cursoss.length; i++) {
+    for(var i = 0; i < this.cursos.length; i++) {
         if(this.cursos[i] == cursos){
             this.cursos.splice(i, 1);
         }

@@ -15,7 +15,7 @@ export class ProfesorService {
   }
 
   remove(profesores:ProfesorModel){
-    for(var i = 0; i < this.profesoress.length; i++) {
+    for(var i = 0; i < this.profesores.length; i++) {
         if(this.profesores[i] == profesores){
             this.profesores.splice(i, 1);
         }

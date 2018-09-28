@@ -13,7 +13,7 @@ export interface EstudianteModelDelegate {
     removeEstudiante: (estudiante:Estudiante)=> void;
 }
 
-export class EstudianteModel  Implements DireccionModelDelegate,CursosModelDelegate{
+export class EstudianteModel  implements DireccionModelDelegate,CursosModelDelegate{
  
     public fields: AtributoItemModel[]
 	//Direccion

@@ -10,21 +10,21 @@
 	fileName="";
 	for(cl in Entidad.all.flatten()){
 	  var ap:Template:= TemplateFactory.load('appPagesAdd.egl');
-	  fileName="./src/pages/add/"+ cl.name+"/"+cl.name+".add.html" ;
+	  fileName="./src/pages/"+ cl.name+"/add/"+cl.name+".add.html" ;
 	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
 	fileName="";
 	for(cl in Entidad.all.flatten()){
 	  var ap:Template:= TemplateFactory.load('appPagesEdit.egl');
-	  fileName="./src/pages/edit/"+ cl.name+"/"+cl.name+".edit.html" ;
+	  fileName="./src/pages/"+ cl.name+"/edit/"+cl.name+".edit.html" ;
 	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
 	fileName="";
 	for(cl in Entidad.all.flatten()){
 	  var ap:Template:= TemplateFactory.load('appPagesList.egl');
-	  fileName="./src/pages/list/"+ cl.name+"/"+cl.name+".list.html" ;
+	  fileName="./src/pages/"+ cl.name+"/list/"+cl.name+".list.html" ;
 	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
