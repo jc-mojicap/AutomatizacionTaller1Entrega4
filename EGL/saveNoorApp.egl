@@ -14,16 +14,25 @@
 	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
+	fileName="";
 	for(cl in Entidad.all.flatten()){
-	  var se:Template:= TemplateFactory.load('services.egl');
-	  fileName="./src/services/"+ cl.name+"-service.ts" ;
-	  se.populate('serv', cl);
-	  se.generate(fileName);
+	  var ap:Template:= TemplateFactory.load('appPagesEdit.egl');
+	  fileName="./src/pages/edit/"+ cl.name+"/"+cl.name+".edit.html" ;
+	  ap.populate('entity', cl);
+	  ap.generate(fileName);
 	}
-	//var e:Template:= TemplateFactory.load('Entidad.egl');
-	//e.generate('estudiante.add.html');
-	//var p:Template:= TemplateFactory.load('Atributo.egl');
-	//p.generate('profesor.add.html');
-	//var c:Template:= TemplateFactory.load('MasterDetail.egl');
-	//c.generate('cursos.add.html');
+	fileName="";
+	for(cl in Entidad.all.flatten()){
+	  var ap:Template:= TemplateFactory.load('appPagesList.egl');
+	  fileName="./src/pages/list/"+ cl.name+"/"+cl.name+".list.html" ;
+	  ap.populate('entity', cl);
+	  ap.generate(fileName);
+	}
+	fileName="";
+	for(cl in Entidad.all.flatten()){
+	  var sv:Template:= TemplateFactory.load('services.egl');
+	  fileName="./src/services/"+ cl.name+"-service.ts" ;
+	  sv.populate('serv',cl);
+	  sv.generate(fileName);
+	}
 %]

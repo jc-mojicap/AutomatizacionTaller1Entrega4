@@ -1,65 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
-  [%
-  for (c in Application.allInstances.entidades.flatten()){
+import { Injectable } from '@angular/core';
+ [%
+ var c = serv.name;
+  var plur;
+ if(c.endsWith('e') or c.endsWith('o') or c.endsWith('a')){
+  		plur=c+"s";      	
+  	}else if(c.endsWith('i') or c.endsWith('u') or c.endsWith('r') or c.endsWith('n')){
+  		plur=c+"es";    
+  	}else{
+    	plur=c;
+  	}
+  var entityLowerCase= plur.toLowerCase;
   %]
-//[%=c.name%]
-import {[%=c.name%]ListPage} from '../pages/[%=c.name%]/list/[%=c.name%].list';
-import {[%=c.name%]EditPage} from '../pages/[%=c.name%]/edit/[%=c.name%].edit';
-import {[%=c.name%]AddPage} from '../pages/[%=c.name%]/add/[%=c.name%].add';
-import {[%=c.name%]Service} from '../pages/[%=c.name%]/services/[%=c.name%]-service';
-  [%
-  }
-%]
+  
+import { [%=c%]Model } from '../model/[%=entityLowerCase%]/[%=entityLowerCase%]';
 
-@NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    [%
-  	for (c in Application.allInstances.entidades.flatten()){%]
-  	  [%=c.name%]ListPage,
- 	  [%=c.name%]EditPage,
- 	  [%=c.name%]AddPage, 	  
-  	[%  
-  	}
-    %]
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    [%
-  	for (c in Application.allInstances.entidades.flatten()){%]
-  	  [%=c.name%]ListPage,
- 	  [%=c.name%]EditPage,
- 	  [%=c.name%]AddPage, 	  
-  	[%  
-  	}
-    %]
-   
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    [%
-  	for (c in Application.allInstances.entidades.flatten()){%]
-  	  [%=c.name%]Service, 	  
-  	[%  
-  	}
-    %]
-  ]
-})
-export class AppModule {}
+@Injectable()
+export class [%=c%]Service {
+
+  [%=entityLowerCase%] : [%=c%]Model[];
+  constructor() {
+    this.[%=entityLowerCase%] = []; 
+  }
+
+  add([%=entityLowerCase%]:[%=c%]Model){
+    this.[%=entityLowerCase%].push([%=entityLowerCase%]);
+  }
+
+  remove([%=entityLowerCase%]:[%=c%]Model){
+    for(var i = 0; i < this.[%=entityLowerCase%]s.length; i++) {
+        if(this.[%=entityLowerCase%][i] == [%=entityLowerCase%]){
+            this.[%=entityLowerCase%].splice(i, 1);
+        }
+    }
+  }
+}
