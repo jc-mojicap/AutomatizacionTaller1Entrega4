@@ -12,10 +12,6 @@ export interface DireccionModelDelegate {
     addDireccion: (direccion:DireccionModel) => void;
     removeDireccion: (direccion:Direccion)=> void;
 }
-  [org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@758a6aa1 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false))]
-  
-  
-  
 
 export class DireccionModel {
  
@@ -23,10 +19,10 @@ export class DireccionModel {
 
     constructor(){
         this.fields = [];
-  		this.fields.push(new AtributoItemStringModel("Direccion",false,true,true,true,"0"))
-  		this.fields.push(new AtributoItemStringModel("Ciudad",false,true,true,false,"0"))
-  		this.fields.push(new AtributoItemStringModel("Pais",true,true,false,false,"0"))
-  		this.fields.push(new AtributoItemNumberModel("Zipcode",true,false,false,false,"0"))
+  		this.fields.push(new AtributoItemStringModel("Direccion",false,true,true,true,"String"))
+  		this.fields.push(new AtributoItemStringModel("Ciudad",false,true,true,false,"String"))
+  		this.fields.push(new AtributoItemStringModel("Pais",true,true,false,false,"String"))
+  		this.fields.push(new AtributoItemNumberModel("Zipcode",true,false,false,false,"Number"))
     }
 
     public getTitleField():AtributoItemModel{
@@ -36,7 +32,6 @@ export class DireccionModel {
             }
         }
         return null;
-    }
- 
-    
+    }   
 }
+

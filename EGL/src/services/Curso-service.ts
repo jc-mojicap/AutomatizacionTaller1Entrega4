@@ -17,11 +17,11 @@ import {ProfesorListPage} from '../pages/Profesor/list/Profesor.list';
 import {ProfesorEditPage} from '../pages/Profesor/edit/Profesor.edit';
 import {ProfesorAddPage} from '../pages/Profesor/add/Profesor.add';
 import {ProfesorService} from '../pages/Profesor/services/Profesor-service';
-//Cursos
-import {CursosListPage} from '../pages/Cursos/list/Cursos.list';
-import {CursosEditPage} from '../pages/Cursos/edit/Cursos.edit';
-import {CursosAddPage} from '../pages/Cursos/add/Cursos.add';
-import {CursosService} from '../pages/Cursos/services/Cursos-service';
+//Curso
+import {CursoListPage} from '../pages/Curso/list/Curso.list';
+import {CursoEditPage} from '../pages/Curso/edit/Curso.edit';
+import {CursoAddPage} from '../pages/Curso/add/Curso.add';
+import {CursoService} from '../pages/Curso/services/Curso-service';
 //Direccion
 import {DireccionListPage} from '../pages/Direccion/list/Direccion.list';
 import {DireccionEditPage} from '../pages/Direccion/edit/Direccion.edit';
@@ -38,9 +38,9 @@ import {DireccionService} from '../pages/Direccion/services/Direccion-service';
   	  ProfesorListPage,
  	  ProfesorEditPage,
  	  ProfesorAddPage, 	  
-  	  CursosListPage,
- 	  CursosEditPage,
- 	  CursosAddPage, 	  
+  	  CursoListPage,
+ 	  CursoEditPage,
+ 	  CursoAddPage, 	  
   	  DireccionListPage,
  	  DireccionEditPage,
  	  DireccionAddPage, 	  
@@ -59,9 +59,9 @@ import {DireccionService} from '../pages/Direccion/services/Direccion-service';
   	  ProfesorListPage,
  	  ProfesorEditPage,
  	  ProfesorAddPage, 	  
-  	  CursosListPage,
- 	  CursosEditPage,
- 	  CursosAddPage, 	  
+  	  CursoListPage,
+ 	  CursoEditPage,
+ 	  CursoAddPage, 	  
   	  DireccionListPage,
  	  DireccionEditPage,
  	  DireccionAddPage, 	  
@@ -73,7 +73,7 @@ import {DireccionService} from '../pages/Direccion/services/Direccion-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   	  EstudianteService, 	  
   	  ProfesorService, 	  
-  	  CursosService, 	  
+  	  CursoService, 	  
   	  DireccionService, 	  
   ]
 })

@@ -12,7 +12,7 @@
     <atributos isEditable="true" isMandatory="true" name="Facultad" tipoDato="String"/>
     <atributos isEditable="true" name="Inicio" tipoDato="Date"/>
   </entidades>
-  <entidades description="Lista de cursos de la universidad" name="Curso">
+  <entidades description="Lista de cursos de la universidad" name="Cursos">
     <atributos isMandatory="true" isVisibleInList="true" isTitle="true" name="Nombre" tipoDato="String"/>
     <atributos isMandatory="true" isVisibleInList="true" name="Codigo" tipoDato="Number"/>
   </entidades>

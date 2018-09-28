@@ -14,6 +14,12 @@
 	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
+	for(cl in Entidad.all.flatten()){
+	  var se:Template:= TemplateFactory.load('services.egl');
+	  fileName="./src/services/"+ cl.name+"-service.ts" ;
+	  se.populate('serv', cl);
+	  se.generate(fileName);
+	}
 	//var e:Template:= TemplateFactory.load('Entidad.egl');
 	//e.generate('estudiante.add.html');
 	//var p:Template:= TemplateFactory.load('Atributo.egl');

@@ -12,21 +12,23 @@ export interface EstudianteModelDelegate {
     addEstudiante: (estudiante:EstudianteModel) => void;
     removeEstudiante: (estudiante:Estudiante)=> void;
 }
-  [org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@758a6aa1 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false))]
-  
-  
-  
 
-export class EstudianteModel {
+export class EstudianteModel  Implements DireccionModelDelegate,CursosModelDelegate{
  
     public fields: AtributoItemModel[]
+	//Direccion
+	public direcciones:DireccionModel[]
+	public direccionesOpen:Boolean = false;
+	//Cursos
+	public cursos:CursosModel[]
+	public cursosOpen:Boolean = false;
 
     constructor(){
         this.fields = [];
-  		this.fields.push(new AtributoItemStringModel("Nombre",false,true,true,true,"0"))
-  		this.fields.push(new AtributoItemNumberModel("Codigo",false,true,true,false,"0"))
-  		this.fields.push(new AtributoItemNumberModel("Semestre",true,true,false,false,"0"))
-  		this.fields.push(new AtributoItemBooleanModel("Activo",true,false,false,false,"2"))
+  		this.fields.push(new AtributoItemStringModel("Nombre",false,true,true,true,"String"))
+  		this.fields.push(new AtributoItemNumberModel("Codigo",false,true,true,false,"Number"))
+  		this.fields.push(new AtributoItemNumberModel("Semestre",true,true,false,false,"Number"))
+  		this.fields.push(new AtributoItemBooleanModel("Activo",true,false,false,false,"Boolean"))
     }
 
     public getTitleField():AtributoItemModel{
@@ -36,7 +38,30 @@ export class EstudianteModel {
             }
         }
         return null;
-    }
- 
-    
+    }   
 }
+
+
+	public addDireccion(direccion:DireccionModel){
+        this.direcciones.push(direccion) 
+	}
+ 
+    public removeDireccion(direccion:DireccionModel){
+         for(var i = 0; i < this.Direcciones.length; i++) {
+             if(this.direcciones[i] == direccion){
+                 this.direcciones.splice(i, 1);
+             }
+         }
+     }
+
+	public addCursos(cursos:CursosModel){
+        this.cursos.push(cursos) 
+	}
+ 
+    public removeCursos(cursos:CursosModel){
+         for(var i = 0; i < this.Cursos.length; i++) {
+             if(this.cursos[i] == cursos){
+                 this.cursos.splice(i, 1);
+             }
+         }
+     }

@@ -14,21 +14,60 @@ export interface [%=mod.name%]ModelDelegate {
 }
 [%
   var text1:String="";
-  var mast= Application.all.detalles.collect(dt | dt.maestro).flatten();%]
-  [%=mast%]
-  
-  
-  
+  var text2:String="";
+  var tam=0;
+  var mast= MasterDetail.all.select(en | en.maestro.name=mod.name).flatten();
+  var cantMas=mast.size();
+  tam=mast.size();
+  for (ent in mast){
+    var esl=ent.collect(e |e.esclavo.name).flatten();
+    for (e in esl){
+      text1+=e+"ModelDelegate";
+      if(mast.size()>1){
+        if(tam>1){
+          tam=tam-1;
+          text1+=",";
+        }     
+      }else{
+      	text1=text1;
+      }
+    }
+  }
+  if(mast.size()>0){
+    text2=" Implements " + text1;
+  }else{
+    text2="";
+  }
+%]
 
-export class [%=mod.name%]Model [%=text1%]{
+export class [%=mod.name%]Model [%=text2%]{
  
     public fields: AtributoItemModel[]
+    [%
+    var plur="";
+    if(cantMas>0){
+      for( es in mast.collect(e |e.esclavo.name).flatten()){%]
+	//[%=es%]
+	[%if(es.endsWith('e') or es.endsWith('o') or es.endsWith('a')){
+      	plur=es+"s";      	
+	  }else if(es.endsWith('i') or es.endsWith('u') or es.endsWith('r') or es.endsWith('n')){
+	  	plur=es+"es";    
+	  }else{
+	    plur=es;
+	  }
+	%]
+	public [%=plur.toLowerCase%]:[%=es%]Model[]
+	public [%=plur.toLowerCase%]Open:Boolean = false;
+	[%
+      }  
+    }
+    %]
 
     constructor(){
         this.fields = [];
         [%
         for (at in mod.atributos.flatten()){%]
-  		this.fields.push(new AtributoItem[%=at.tipoDato%]Model("[%=at.name%]",[%=at.isEditable%],[%=at.isMandatory%],[%=at.isVisibleInList%],[%=at.isTitle%],"[%=at.tipoDato.value%]"))
+  		this.fields.push(new AtributoItem[%=at.tipoDato%]Model("[%=at.name%]",[%=at.isEditable%],[%=at.isMandatory%],[%=at.isVisibleInList%],[%=at.isTitle%],"[%=at.tipoDato.literal%]"))
         [%
         }
         %]
@@ -41,7 +80,34 @@ export class [%=mod.name%]Model [%=text1%]{
             }
         }
         return null;
-    }
- 
-    
+    }   
 }
+
+[%
+if(cantMas>0){
+
+	for( es in mast.collect(e |e.esclavo.name).flatten()){
+		if(es.endsWith('e') or es.endsWith('o') or es.endsWith('a')){
+      		plur=es+"s";      	
+	  	}else if(es.endsWith('i') or es.endsWith('u') or es.endsWith('r') or es.endsWith('n')){
+	  		plur=es+"es";    
+	  	}else{
+	    	plur=es;
+	  	}
+	%]
+
+	public add[%=es%]([%=es.toLowerCase%]:[%=es%]Model){
+        this.[%=plur.toLowerCase%].push([%=es.toLowerCase%]) 
+	}
+ 
+    public remove[%=es%]([%=es.toLowerCase%]:[%=es%]Model){
+         for(var i = 0; i < this.[%=plur%].length; i++) {
+             if(this.[%=plur.toLowerCase%][i] == [%=es.toLowerCase%]){
+                 this.[%=plur.toLowerCase%].splice(i, 1);
+             }
+         }
+     }
+[%
+	}
+}
+%]

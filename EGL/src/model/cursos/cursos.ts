@@ -8,12 +8,12 @@ import { DireccionModel, DireccionModelDelegate } from '../direccion/direccion';
 import { CursoModel, CursoModelDelegate } from '../curso/curso';
 
 
-export interface CursoModelDelegate {
-    addCurso: (curso:CursoModel) => void;
-    removeCurso: (curso:Curso)=> void;
+export interface CursosModelDelegate {
+    addCursos: (cursos:CursosModel) => void;
+    removeCursos: (cursos:Cursos)=> void;
 }
 
-export class CursoModel {
+export class CursosModel {
  
     public fields: AtributoItemModel[]
 
