@@ -279,7 +279,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_OOXBcLHSEeibN6nh4m9GDA" name="Atributo" tooltipText="" incomingEdges="_OPIdhrHSEeibN6nh4m9GDA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_OOXBcLHSEeibN6nh4m9GDA" name="Atributo" tooltipText="&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type" incomingEdges="_OPIdhrHSEeibN6nh4m9GDA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="model/entrega3.ecore#//Atributo"/>
       <semanticElements xmi:type="ecore:EClass" href="model/entrega3.ecore#//Atributo"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -329,7 +329,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_VD0fILJbEeibOKnh4m9GDA" name="tipoDato : Datos" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_VD0fILJbEeibOKnh4m9GDA" name="tipoDato : Data" tooltipText="&#xA;WARNING : The default value literal '' must be a valid literal of the attribute's type">
         <target xmi:type="ecore:EAttribute" href="model/entrega3.ecore#//Atributo/tipoDato"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/entrega3.ecore#//Atributo/tipoDato"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_k03gkLJcEeibOKnh4m9GDA" labelAlignment="LEFT">

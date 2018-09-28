@@ -7,10 +7,11 @@
 	  m.populate('mod', cl);
 	  m.generate("./src/model/"+ cl.name.toLowerCase+"/"+cl.name.toLowerCase+".ts" );
 	}
-	var ap:Template:= TemplateFactory.load('appPagesAdd.egl');
 	fileName="";
 	for(cl in Entidad.all.flatten()){
+	  var ap:Template:= TemplateFactory.load('appPagesAdd.egl');
 	  fileName="./src/pages/add/"+ cl.name+"/"+cl.name+".add.html" ;
+	  ap.populate('entity', cl);
 	  ap.generate(fileName);
 	}
 	//var e:Template:= TemplateFactory.load('Entidad.egl');

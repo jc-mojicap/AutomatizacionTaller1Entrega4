@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Entidads
+      Direccions
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item *ngFor="let field of Entidad.fields;">
+  <ion-item *ngFor="let field of Direccion.fields;">
     <ion-label>{{field.name}}<span *ngIf="field.isMandatory">*</span></ion-label>
     <ion-input *ngIf="field.isString()" type="text" [(ngModel)]="field.value" name="field.name"></ion-input>
     <ion-input *ngIf="field.isNumber()" type="number" [(ngModel)]="field.value" name="field.name"></ion-input>

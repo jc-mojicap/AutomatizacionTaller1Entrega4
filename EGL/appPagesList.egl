@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      [%=Entidad.name%]s
+      [%=entity.name%]s
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,17 +9,17 @@
 <ion-content padding>
   
   <ion-list> 
-    <ion-item-sliding *ngFor="let [%=Entidad.name%] of model.[%=Entidad.name%]s">
+    <ion-item-sliding *ngFor="let [%=entity.name%] of model.[%=entity.name%]s">
       <ion-item>
-          <div *ngFor="let field of [%=Entidad.name%].fields">
+          <div *ngFor="let field of [%=entity.name%].fields">
               <div *ngIf="field.isTitle"><b>{{ field.value }}</b><br></div>
               <div *ngIf="field.isVisibleInList&&!field.isTitle">{{ field.value }}<br></div>
           </div>
           
       </ion-item>
       <ion-item-options>
-        <button ion-button color="primary" (click)="itemSelected([%=Entidad.name%])"><ion-icon name="create"></ion-icon></button>
-        <button ion-button color="danger" (click)="delete([%=Entidad.name%])"><ion-icon name="trash"></ion-icon></button>
+        <button ion-button color="primary" (click)="itemSelected([%=entity.name%])"><ion-icon name="create"></ion-icon></button>
+        <button ion-button color="danger" (click)="delete([%=entity.name%])"><ion-icon name="trash"></ion-icon></button>
       
       </ion-item-options>
     </ion-item-sliding>

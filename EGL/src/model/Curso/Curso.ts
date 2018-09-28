@@ -12,7 +12,9 @@ export interface CursoModelDelegate {
     addCurso: (curso:CursoModel) => void;
     removeCurso: (curso:Curso)=> void;
 }
-  [org.eclipse.emf.ecore.impl.DynamicEObjectImpl@bc49bc (eClass: org.eclipse.emf.ecore.impl.EClassImpl@41eeb6 (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@6bb1f7 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@41eeb6 (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@bc49bc (eClass: org.eclipse.emf.ecore.impl.EClassImpl@41eeb6 (name: Entidad) (instanceClassName: null) (abstract: false, interface: false))]
+  [org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@758a6aa1 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false)), org.eclipse.emf.ecore.impl.DynamicEObjectImpl@7df65e61 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@3cc6932d (name: Entidad) (instanceClassName: null) (abstract: false, interface: false))]
+  
+  
   
 
 export class CursoModel {
